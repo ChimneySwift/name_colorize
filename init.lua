@@ -126,7 +126,7 @@ minetest.register_on_receiving_chat_messages(function(message)
             -- name = minetest.colorize(get_color(name), name..": ")
         end
     elseif message:sub(1, 2) == "* " or message:sub(1, 4) == "*** " then
-        local parts = string.split(message, " ", 3)
+        local parts = string.split(message, " ", false, 2)
         name = minetest.colorize(get_color(parts[2]), parts[1].." "..parts[2].." ")
         msg = parts[3]
     end
